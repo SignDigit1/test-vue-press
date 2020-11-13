@@ -5,9 +5,8 @@ COPY $PWD/  /test-vue-press/
 
 WORKDIR /test-vue-press/
 
-RUN npm install
+RUN npm install && npm run build && rm -rf node_modules
 
-RUN npm run build
 
 # 运行阶段
 FROM nginx
