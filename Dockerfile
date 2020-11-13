@@ -5,7 +5,7 @@ COPY $PWD/  /test-vue-press/
 
 WORKDIR /test-vue-press/
 
-RUN npm install && npm run build && rm -rf node_modules
+RUN npm install && npm run build
 
 
 # 运行阶段
@@ -16,4 +16,4 @@ COPY --from=builder /test-vue-press/docs/.vuepress/dist /usr/share/nginx/html/
 
 MAINTAINER signdigit1<fujunchn@qq.com>
 
-EXPOSE 8080 8011
+# EXPOSE 8080 8011
